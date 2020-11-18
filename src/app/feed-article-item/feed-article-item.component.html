@@ -9,11 +9,16 @@
   <p>{{(article.description?.length > this.MAX_SUMMARY_CHARS) ?
     (article.description | slice:0: this.MAX_SUMMARY_CHARS) + '...' : article.description}}</p>
 
-  <button (click)="showModal = true;" pButton type="button" label="Read More" class="p-button-text f-justify-right"></button>
+  <p-button (click)="showModal = true;" pButton type="button" label="Read More"
+          class="p-button-text f-justify-right"></p-button>
 </div>
 
-<p-dialog [style]="{width: '50vw'}" [header]="article.title" [(visible)]="showModal" [modal]="true">
-  {{article.description}}
+<p-dialog styleClass="dia-summary" [maximizable]="true" [header]="article.title" [(visible)]="showModal" [modal]="true">
+
+  <ng-container *ngIf="article.urlToImage">
+    <img class="img-30" src="{{article.urlToImage}}" alt="{{article.title}}">
+  </ng-container>
+  <p>{{article.description}} </p>
 </p-dialog>
 
 

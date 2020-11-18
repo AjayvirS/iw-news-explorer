@@ -23,7 +23,7 @@ import { MenuComponent } from './menu/menu.component';
 import { ArticlesEpic } from './state/epics/articles.epic';
 import { MiscEpic } from './state/epics/misc.epic';
 import { IRootState, rootReducer } from './state/reducers/root.reducer';
-import { FeedArticleItemComponent } from './feed-articles/feed-article-item/feed-article-item.component';
+import { FeedArticleItemComponent } from './feed-article-item/feed-article-item.component';
 
 @NgModule({
   declarations: [
