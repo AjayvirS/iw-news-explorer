@@ -11,6 +11,7 @@ export class FeedArticleItemComponent implements OnInit {
   @Input()
   readonly article: NewsAPI.Article;
   MAX_SUMMARY_CHARS = MAX_SUMMARY_CHARS;
+  showModal = false;
 
   constructor() { }
 
