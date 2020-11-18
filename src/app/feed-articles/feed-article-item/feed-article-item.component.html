@@ -1,6 +1,13 @@
+<h3>{{article.title}}</h3>
+<div class="f-container">
+  <small *ngIf="article.author">Author: {{article.author}}</small>
+  <small *ngIf="article.publishedAt">Published at: {{article.publishedAt |  date:'medium'}}</small>
+</div>
+<hr>
 
-<small><label class="font-weight-bold">Author: {{article.author}}</label></small>
+<div class="f-container">
+  <p>{{(article.description?.length > this.MAX_SUMMARY_CHARS) ?
+    (article.description | slice:0: this.MAX_SUMMARY_CHARS) + '...' : article.description}}</p>
 
-<small><label class="font-weight-bold">Published at: {{article.publishedAt}}</label></small>
-
-<p>{{article.description}}</p>
+  <button pButton type="button" label="Read More" class="p-button-text f-justify-right"></button>
+</div>

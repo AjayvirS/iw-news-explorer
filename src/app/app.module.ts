@@ -23,6 +23,7 @@ import { MenuComponent } from './menu/menu.component';
 import { ArticlesEpic } from './state/epics/articles.epic';
 import { MiscEpic } from './state/epics/misc.epic';
 import { IRootState, rootReducer } from './state/reducers/root.reducer';
+import { FeedArticleItemComponent } from './feed-articles/feed-article-item/feed-article-item.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { IRootState, rootReducer } from './state/reducers/root.reducer';
     FeedComponent,
     FeedBuilderComponent,
     FeedArticlesComponent,
-    FeedHeaderComponent
+    FeedHeaderComponent,
+    FeedArticleItemComponent
   ],
   imports: [
     BrowserModule,
@@ -81,6 +83,7 @@ export class AppModule {
           totalResults: 0,
         }
       },
+
       feeds: {
         feeds: []
       }
